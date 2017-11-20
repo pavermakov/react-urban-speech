@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.transcript !== nextState.transcript) {
+    if (this.state.transcript !== nextState.transcript && nextState.transcript !== '') {
       this.fetchDefinition(nextState.transcript);
     }
 
@@ -82,7 +82,7 @@ class App extends Component {
   };
 
   handleRecordingStart = () => {
-    this.setState({ results: [] });
+    this.resetResults();
     this.startRecording();
   }
 
@@ -94,9 +94,6 @@ class App extends Component {
   abortRecording = () => {
     annyang.abort();
     this.setState({ isRecording: false });
-
-    // mock
-    this.fetchDefinition('chicken');
   };
 
   fetchDefinition = (term) => {
@@ -114,7 +111,11 @@ class App extends Component {
 
   handleDictionaryError = (err) => {
     console.log(err);
-  }
+  };
+
+  resetResults = () => {
+    this.setState({ results: [], transcript: '' });
+  };
 }
 
 export default App;

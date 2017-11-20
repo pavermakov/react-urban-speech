@@ -14,8 +14,8 @@ const ResultItem = ({ word, author, definition, example }) => {
         </span>
 
         <span className="result-item__body">
-          <span className="result-item__definition">{definition}</span>
-          <span className="result-item__example bold cursive">{example}</span>
+          <span className="result-item__definition bold">{definition}</span>
+          <span className="result-item__example cursive">{example}</span>
         </span>
       </Card>
     </li>
