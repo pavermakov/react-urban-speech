@@ -73,8 +73,8 @@ class App extends Component {
   };
 
   handleSpeechResult = (event) => {
-    this.abortRecording();
     this.saveTranscript(event);
+    this.abortRecording();
   }
 
   saveTranscript = (event) => {

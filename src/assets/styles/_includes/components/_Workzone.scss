@@ -1,5 +1,7 @@
 .workzone {
-  &__row {}
+  &__row {
+    position: relative;
+  }
 
   &__row_pushed_down {}
 
@@ -18,13 +20,10 @@
   &__transcript {
     display: block;
     font-size: 65px;
+    letter-spacing: 1px;
     color: $blue;
     text-align: center;
     text-transform: capitalize;
-  }
-
-  &__transcript_spaced {
-    letter-spacing: 1px;
   }
 
   &__button {

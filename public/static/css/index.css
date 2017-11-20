@@ -441,6 +441,27 @@ ul {
 .cursive {
   font-style: italic; }
 
+.slide-enter {
+  max-height: 100%;
+  opacity: 0;
+  transform: translateY(-120%);
+  transition: all .5s; }
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateY(0); }
+
+.slide-leave {
+  max-height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transition: opacity .5s; }
+
+.slide-leave-active {
+  opacity: 0; }
+
 .app__wrapper {
   padding: 30px; }
 
@@ -455,6 +476,9 @@ ul {
   border-radius: 12px;
   box-shadow: 0px 0px 44px 0px rgba(73, 185, 252, 0.1); }
 
+.workzone__row {
+  position: relative; }
+
 .workzone__row_centered {
   text-align: center; }
 
@@ -467,12 +491,10 @@ ul {
 .workzone__transcript {
   display: block;
   font-size: 65px;
+  letter-spacing: 1px;
   color: #49B9FC;
   text-align: center;
   text-transform: capitalize; }
-
-.workzone__transcript_spaced {
-  letter-spacing: 1px; }
 
 .workzone__button {
   width: 200px;

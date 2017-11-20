@@ -1,0 +1,26 @@
+.slide {
+  &-enter {
+    max-height: 100%;
+    opacity: 0;
+    transform: translateY(-120%);
+    transition: all .5s;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-leave {
+    max-height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: opacity .5s;
+  }
+
+  &-leave-active {
+    opacity: 0;
+  }
+}

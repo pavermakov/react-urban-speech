@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Card from './Card';
 
@@ -7,9 +8,15 @@ class Workzone extends Component {
   render() {
     return (
       <Card className={`${this.props.className} workzone`}>
-        <div className="workzone__row">
+        <CSSTransitionGroup
+          className="workzone__row"
+          component="div"
+          transitionName="slide"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
           {this.renderTranscript()}
-        </div>
+        </CSSTransitionGroup>
 
         <div className="workzone__row workzone__row_pushed_down workzone__row_centered">
           {this.renderButton()}
@@ -20,14 +27,14 @@ class Workzone extends Component {
 
   renderTranscript = () => {
     if (this.props.isRecording) {
-      return <span className="workzone__transcript">Listening...</span>;
+      return <span className="workzone__transcript" key="active">Listening...</span>;
     }
 
     if (this.props.transcript.length === 0) {
-      return <span className="workzone__transcript workzone__transcript_spaced">Press start to begin</span>;
+      return <span className="workzone__transcript" key="initial">Press start to begin</span>;
     }
 
-    return <span className="workzone__transcript">{this.props.transcript}</span>;
+    return <span className="workzone__transcript" key="final">{this.props.transcript}</span>;
   };
 
   renderButton = () => {
