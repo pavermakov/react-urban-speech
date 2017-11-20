@@ -1,0 +1,39 @@
+.workzone {
+  &__row {}
+
+  &__row_pushed_down {}
+
+  &__row_centered {
+    text-align: center;
+  }
+
+  &__row + &__row {
+    margin-top: 15px;
+  }
+
+  &__row + &__row_pushed_down {
+    margin-top: 40px;
+  }
+
+  &__transcript {
+    display: block;
+    font-size: 65px;
+    color: $blue;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__transcript_spaced {
+    letter-spacing: 1px;
+  }
+
+  &__button {
+    width: 100px;
+    height: 100px;
+    border-radius: 99999px;
+    background-color: $blue;
+    color: $white;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+}

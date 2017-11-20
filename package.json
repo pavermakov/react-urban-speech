@@ -1,0 +1,23 @@
+{
+  "name": "urban-speech",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "annyang": "^2.6.0",
+    "axios": "^0.17.1",
+    "node-sass-chokidar": "^0.0.3",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/assets/styles -o public/static/css --output-style compressed",
+    "watch-css": "npm run build-css && node-sass-chokidar src/assets/styles -o public/static/css --watch --recursive"
+  }
+}

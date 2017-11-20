@@ -1,0 +1,30 @@
+.app {
+
+  &__wrapper {
+    padding: 30px;
+  }
+
+  &__body {
+
+  }
+
+  &__card {
+
+  }
+
+  &__workzone {
+
+  }
+
+  &__results {
+
+  }
+
+  &__workzone + &__results {
+    margin-top: 20px;
+  }
+
+  &__footer {
+
+  }
+}
