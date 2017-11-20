@@ -54,10 +54,7 @@ class App extends Component {
           />
 
           <div className="app__results">
-            {
-              this.state.results.list &&
-              <Results data={this.state.results.list} />
-            }
+            <Results data={this.state.results.list} />
           </div>
         </main>
 

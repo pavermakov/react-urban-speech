@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
+
 import ResultItem from './ResultItem';
 
 class Results extends Component {
   render() {
     return (
-      <ul className="results">
+      <CSSTransitionGroup
+        className="results"
+        component="ul"
+        transitionName="swing"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={500}
+      >
         {this.renderResults()}
-      </ul>
+      </CSSTransitionGroup>
     );
   }
 
@@ -34,7 +42,7 @@ Results.propTypes = {
 };
 
 Results.defaultProps = {
-  date: [],
+  data: [],
 };
 
 export default Results;

@@ -38,11 +38,10 @@ class Workzone extends Component {
   };
 
   renderButton = () => {
-    if (this.props.isRecording) {
-      return <button className="workzone__button" onClick={this.props.onRecordingAbort}>abort</button>;
-    }
+    const text = this.props.isRecording ? 'abort' : 'start';
+    const callback = this.props.isRecording ? this.props.onRecordingAbort : this.props.onRecordingStart;
 
-    return <button className="workzone__button" onClick={this.props.onRecordingStart}>start</button>;
+    return <button className="workzone__button" onClick={callback}>{text}</button>;
   };
 }
 
