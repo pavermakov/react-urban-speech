@@ -36,3 +36,21 @@
     letter-spacing: 2px;
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .workzone {
+    &__transcript {
+      font-size: 25px;
+    }
+
+    &__row + &__row_pushed_down {
+      margin-top: 15px;
+    }
+
+    &__button {
+      width: 120px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+}
