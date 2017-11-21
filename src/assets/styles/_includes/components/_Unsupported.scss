@@ -1,0 +1,39 @@
+.unsupported {
+  height: 100vh;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 550px;
+    transform: translate(-50%, -50%);
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__body {}
+
+  &__row {
+    text-align: center;
+    font-size: 40px;
+    color: $blue;
+  }
+
+  &__header + &__body,
+  &__row + &__row {
+    margin-top: 40px;
+  }
+
+  &__link {
+    text-decoration: underline;
+    color: $brown;
+  }
+}

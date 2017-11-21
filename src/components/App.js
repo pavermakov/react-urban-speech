@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Workzone from './Workzone';
 import Results from './Results';
+import Unsupported from './Unsupported';
 
 import config from '../config';
 
@@ -64,9 +65,7 @@ class App extends Component {
   };
 
   renderOnError = () => {
-    return (
-      <p>Sorry, your browser does not support Speech Recognition yet ...</p>
-    );
+    return <Unsupported />;
   };
 
   handleSpeechResult = (event) => {
