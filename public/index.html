@@ -3,24 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#DAECFF">
+
+    <title>Urban Speech</title>
+
+    <!-- general info -->
+    <meta name="description" content="Skim through the Urban Dictionary using browser's native Speech Recognition API">
+    <meta name="keywords" content="javascript, css, html, react, front end, development, web development, urban dictionary, speech recognition">
+    <meta name="image" content="%PUBLIC_URL%/static/images/urban-dictionary-logo.png">
+
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Urban Speech">
+    <meta itemprop="description" content="Skim through the Urban Dictionary using browser's native Speech Recognition API">
+    <meta itemprop="image" content="%PUBLIC_URL%/static/images/urban-dictionary-logo.png">
+
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Urban Speech">
+    <meta name="og:description" content="Skim through the Urban Dictionary using browser's native Speech Recognition API">
+    <meta name="og:image" content="%PUBLIC_URL%/static/images/urban-dictionary-logo.png">
+    <meta name="og:url" content="https://urban-speech.surge.sh/">
+    <meta name="og:site_name" content="Urban Speech">
+    <meta name="fb:admins" content="100001071520207">
+    <meta name="og:type" content="website">
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Urban Speech</title>
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
     <link rel="stylesheet" href="%PUBLIC_URL%/static/css/index.css">
   </head>
   <body>
@@ -28,12 +37,6 @@
       You need to enable JavaScript to run this app.
     </noscript>
 
-    <div class="root transparent" id="root"></div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function(event) {
-        // remove loader and .transparent off the .root
-      });
-    </script>
+    <div class="root" id="root"></div>
   </body>
 </html>

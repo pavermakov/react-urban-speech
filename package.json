@@ -20,6 +20,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/assets/styles -o public/static/css --output-style compressed",
-    "watch-css": "npm run build-css && node-sass-chokidar src/assets/styles -o public/static/css --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/assets/styles -o public/static/css --watch --recursive",
+    "deploy": "npm run build && surge -p build -d https://urban-speech.surge.sh/"
   }
 }
