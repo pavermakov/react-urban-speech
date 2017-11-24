@@ -16,6 +16,7 @@ class App extends Component {
       isSpeechAvailable: !!annyang,
       transcript: '',
       isRecording: false,
+      isFetching: false,
       results: {},
     };
   }
@@ -50,12 +51,13 @@ class App extends Component {
             className="app__workzone"
             transcript={this.state.transcript}
             isRecording={this.state.isRecording}
+            isFetching={this.state.isFetching}
             onRecordingStart={this.handleRecordingStart}
             onRecordingAbort={this.abortRecording}
           />
 
           <div className="app__results">
-            <Results data={this.state.results.list} />
+            <Results data={this.state.results} />
           </div>
         </main>
 
@@ -93,6 +95,8 @@ class App extends Component {
   };
 
   fetchDefinition = (term) => {
+    this.setState({ isFetching: true });
+
     axios.get(`${config.urbanDictionaryApi}${encodeURI(term)}`)
       .then(this.handleDictionaryResponse)
       .catch((err) => {
@@ -102,7 +106,7 @@ class App extends Component {
 
   handleDictionaryResponse = ({ data }) => {
     console.log(data);
-    this.setState({ results: data });
+    this.setState({ results: data, isFetching: false });
   };
 
   handleDictionaryError = (err) => {
@@ -110,7 +114,7 @@ class App extends Component {
   };
 
   resetResults = () => {
-    this.setState({ results: [], transcript: '' });
+    this.setState({ results: {}, transcript: '' });
   };
 }
 

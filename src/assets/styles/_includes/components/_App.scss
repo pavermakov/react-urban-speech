@@ -6,28 +6,12 @@
     padding: 30px;
   }
 
-  &__body {
+  &__workzone {}
 
-  }
-
-  &__card {
-
-  }
-
-  &__workzone {
-
-  }
-
-  &__results {
-
-  }
+  &__results {}
 
   &__workzone + &__results {
     margin-top: 20px;
-  }
-
-  &__footer {
-
   }
 }
 

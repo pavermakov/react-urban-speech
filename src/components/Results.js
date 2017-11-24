@@ -20,29 +20,39 @@ class Results extends Component {
   }
 
   renderResults = () => {
-    return (
-      this.props.data.map((result) => {
-        return (
-          <ResultItem
-            key={result.defid}
-            word={result.word}
-            author={result.author}
-            definition={result.definition}
-            example={result.example}
-            link={result.permalink}
-          />
-        );
-      })
-    );
+    const { list, result_type } = this.props.data;
+
+    if (result_type && result_type === 'no_results') {
+      return <ResultItem />;
+    }
+
+    if (list && list.length > 0) {
+      return (
+        list.map((result) => {
+          return (
+            <ResultItem
+              key={result.defid}
+              word={result.word}
+              author={result.author}
+              definition={result.definition}
+              example={result.example}
+              link={result.permalink}
+            />
+          );
+        })
+      );
+    }
+
+    return;
   };
 }
 
 Results.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
 };
 
 Results.defaultProps = {
-  data: [],
+  data: {},
 };
 
 export default Results;

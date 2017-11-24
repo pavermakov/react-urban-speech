@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Card from './Card';
+import Loader from './Loader';
 
 class Workzone extends Component {
   render() {
+    const { isFetching } = this.props;
+
     return (
       <Card className={`${this.props.className} workzone`}>
         <CSSTransitionGroup
@@ -20,6 +23,10 @@ class Workzone extends Component {
 
         <div className="workzone__row workzone__row_pushed_down workzone__row_centered">
           {this.renderButton()}
+        </div>
+
+        <div className={isFetching ? `workzone__loader workzone__loader_active` : 'workzone__loader'}>
+          <Loader />
         </div>
       </Card>
     );
@@ -49,6 +56,7 @@ Workzone.propTypes = {
   className: PropTypes.string,
   transcript: PropTypes.string.isRequired,
   isRecording: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   onRecordingStart: PropTypes.func.isRequired,
   onRecordingAbort: PropTypes.func.isRequired,
 };
